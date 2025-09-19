@@ -9,6 +9,9 @@ import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import CreateContract from "./pages/CreateContract";
 import DigitalSignature from "./pages/DigitalSignature";
+import Repositories from "./pages/Repositories";
+import Analytics from "./pages/Analytics";
+import Users from "./pages/Users";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +31,9 @@ const App = () => (
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/create" element={<CreateContract />} />
                 <Route path="/sign" element={<DigitalSignature />} />
+                <Route path="/repository" element={<Repositories />} />
+                <Route path="/analytics" element={<Analytics />} />
+                <Route path="/users" element={<Users />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
