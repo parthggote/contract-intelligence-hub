@@ -16,7 +16,6 @@ import {
   CheckCircle2
 } from "lucide-react"
 import { Link } from "react-router-dom"
-import heroImage from "@/assets/hero-image.jpg"
 
 const Index = () => {
   const features = [
@@ -85,21 +84,13 @@ const Index = () => {
   return (
     <div className="space-y-20">
       {/* Hero Section */}
-      <section className="relative overflow-hidden rounded-2xl">
-        <div className="absolute inset-0">
-          <img 
-            src={heroImage} 
-            alt="Contract Management Platform" 
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70 dark:from-primary/95 dark:to-primary/80" />
-        </div>
+      <section className="relative overflow-hidden rounded-2xl bg-card">
         <div className="relative px-6 py-24 sm:px-12 sm:py-32 lg:px-16">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-primary-foreground sm:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl gradient-text">
               Transform Contracts into Business Intelligence
             </h1>
-            <p className="mt-6 text-lg leading-8 text-primary-foreground/90">
+            <p className="mt-6 text-lg leading-8 text-muted-foreground">
               Data-first contract lifecycle management with digital signatures. 
               Reduce cycle times by 30-50% while unlocking contract insights.
             </p>
