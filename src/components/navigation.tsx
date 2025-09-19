@@ -28,30 +28,31 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   
   return (
-    <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 justify-between">
-          <div className="flex">
-            <div className="flex flex-shrink-0 items-center">
-              <Link to="/" className="text-xl font-bold text-primary">
+        <div className="flex h-20 justify-between items-center">
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <Link to="/" className="text-2xl font-bold text-primary">
                 ContractCLM
               </Link>
             </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <div className="hidden sm:ml-10 sm:flex sm:space-x-8">
               {navigation.map((item) => {
                 const Icon = item.icon
+                const isActive = location.pathname === item.href
                 return (
                   <Link
                     key={item.name}
                     to={item.href}
                     className={cn(
-                      "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium transition-colors",
-                      location.pathname === item.href
-                        ? "border-primary text-primary"
-                        : "border-transparent text-muted-foreground hover:border-border hover:text-foreground"
+                      "inline-flex items-center rounded-md px-3 py-2 text-base font-medium transition-colors",
+                      isActive
+                        ? "bg-primary/10 text-primary"
+                        : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                     )}
                   >
-                    <Icon className="mr-2 h-4 w-4" />
+                    <Icon className="mr-2 h-5 w-5" />
                     {item.name}
                   </Link>
                 )
@@ -61,10 +62,10 @@ export function Navigation() {
           
           <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
             <ModeToggle />
-            <Button variant="outline" size="sm">
+            <Button variant="ghost" size="sm">
               Sign In
             </Button>
-            <Button size="sm">
+            <Button size="sm" variant="secondary">
               Start Free Trial
             </Button>
           </div>
